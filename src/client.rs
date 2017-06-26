@@ -60,18 +60,18 @@ fn send_msg<S: Deref<Target = UdpSocket>, A: ToSocketAddrs>
 
 
 bitflags! {
-  pub flags DiscoverOptions: u8 {
-    const GET_LABEL         = 0b0000_0001,
-    const GET_WIFI          = 0b0000_0010,
-    const GET_LOCATION      = 0b0000_0100,
-    const GET_HOST_FIRMWARE = 0b0000_1000,
-    const GET_GROUP         = 0b0001_0000,
-    const GET_POWER         = 0b0010_0000,
-    const GET_HOST_INFO     = 0b0100_0000,
+  pub struct DiscoverOptions: u8 {
+    const GET_LABEL         = 0b0000_0001;
+    const GET_WIFI          = 0b0000_0010;
+    const GET_LOCATION      = 0b0000_0100;
+    const GET_HOST_FIRMWARE = 0b0000_1000;
+    const GET_GROUP         = 0b0001_0000;
+    const GET_POWER         = 0b0010_0000;
+    const GET_HOST_INFO     = 0b0100_0000;
     const GET_ALL           = GET_LABEL.bits | GET_WIFI.bits |
                               GET_LOCATION.bits | GET_HOST_FIRMWARE.bits |
                               GET_GROUP.bits | GET_POWER.bits |
-                              GET_HOST_INFO.bits
+                              GET_HOST_INFO.bits;
   }
 }
 
